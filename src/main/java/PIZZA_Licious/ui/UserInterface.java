@@ -1,4 +1,4 @@
-package PIZZA_Licious.userinterface;
+package PIZZA_Licious.ui;
 
 
 import PIZZA_Licious.order.Drink;
