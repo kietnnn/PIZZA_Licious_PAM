@@ -10,12 +10,12 @@ public class Drink implements Price {
     private final String flavor;
     private final String ice;
 
-    private static final Map<String, Double> sizePrice = new HashMap<>();
+    private static final Map<String, Double> SIZE_PRICE = new HashMap<>();
 
     static {
-        sizePrice.put("Small", 2.00);
-        sizePrice.put("Medium", 2.50);
-        sizePrice.put("Large", 3.00);
+        SIZE_PRICE.put("Small", 2.00);
+        SIZE_PRICE.put("Medium", 2.50);
+        SIZE_PRICE.put("Large", 3.00);
     }
 
     public Drink(String size, String flavor,String ice) {
@@ -26,7 +26,7 @@ public class Drink implements Price {
 
     @Override
     public double getPrice() {
-        return sizePrice.getOrDefault(size, 0.00);
+        return SIZE_PRICE.getOrDefault(size, 0.00);
     }
 
     @Override

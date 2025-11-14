@@ -18,34 +18,34 @@ public class Pizza implements Price {
     private int extraMeatCount;
     private int extraCheeseCount;
 
-    private static final Map<String, Double> basePrice = new HashMap<>();
-    private static final Map<String, Double> meatPrice = new HashMap<>();
-    private static final Map<String, Double> cheesePrice = new HashMap<>();
-    private static final Map<String, Double> extraMeatPrice = new HashMap<>();
-    private static final Map<String, Double> extraCheesePrice = new HashMap<>();
+    private static final Map<String, Double> BASE_PRICE = new HashMap<>();
+    private static final Map<String, Double> MEAT_PRICE = new HashMap<>();
+    private static final Map<String, Double> CHEESE_PRICE = new HashMap<>();
+    private static final Map<String, Double> EXTRA_MEAT_PRICE = new HashMap<>();
+    private static final Map<String, Double> EXTRA_CHEESE_PRICE = new HashMap<>();
 
 
 
     static {
-        basePrice.put("8", 8.50);
-        basePrice.put("12", 12.00);
-        basePrice.put("16", 16.50);
+        BASE_PRICE.put("8", 8.50);
+        BASE_PRICE.put("12", 12.00);
+        BASE_PRICE.put("16", 16.50);
 
-        meatPrice.put("8", 1.00);
-        meatPrice.put("12", 2.00);
-        meatPrice.put("16", 3.00);
+        MEAT_PRICE.put("8", 1.00);
+        MEAT_PRICE.put("12", 2.00);
+        MEAT_PRICE.put("16", 3.00);
 
-        cheesePrice.put("8", 0.75);
-        cheesePrice.put("12", 1.50);
-        cheesePrice.put("16", 2.25);
+        CHEESE_PRICE.put("8", 0.75);
+        CHEESE_PRICE.put("12", 1.50);
+        CHEESE_PRICE.put("16", 2.25);
 
-        extraMeatPrice.put("8", 0.50);
-        extraMeatPrice.put("12", 1.00);
-        extraMeatPrice.put("16", 1.50);
+        EXTRA_MEAT_PRICE.put("8", 0.50);
+        EXTRA_MEAT_PRICE.put("12", 1.00);
+        EXTRA_MEAT_PRICE.put("16", 1.50);
 
-        extraCheesePrice.put("8", 0.30);
-        extraCheesePrice.put("12", 0.60);
-        extraCheesePrice.put("16", 0.90);
+        EXTRA_CHEESE_PRICE.put("8", 0.30);
+        EXTRA_CHEESE_PRICE.put("12", 0.60);
+        EXTRA_CHEESE_PRICE.put("16", 0.90);
     }
 
     public Pizza(String crustType, String size) {
@@ -85,11 +85,11 @@ public class Pizza implements Price {
 
     @Override
     public double getPrice() {
-        double base = basePrice.getOrDefault(size, 0.0);
-        double meatCost = meats.size() * meatPrice.getOrDefault(size, 0.0);
-        double cheeseCost = cheeses.size() * cheesePrice.getOrDefault(size, 0.0);
-        double extraMeatCost = extraMeatCount * extraMeatPrice.getOrDefault(size, 0.0);
-        double extraCheeseCost = extraCheeseCount * extraCheesePrice.getOrDefault(size, 0.0);
+        double base = BASE_PRICE.getOrDefault(size, 0.0);
+        double meatCost = meats.size() * MEAT_PRICE.getOrDefault(size, 0.0);
+        double cheeseCost = cheeses.size() * CHEESE_PRICE.getOrDefault(size, 0.0);
+        double extraMeatCost = extraMeatCount * EXTRA_MEAT_PRICE.getOrDefault(size, 0.0);
+        double extraCheeseCost = extraCheeseCount * EXTRA_CHEESE_PRICE.getOrDefault(size, 0.0);
 
 
         return base + meatCost + cheeseCost + extraMeatCost + extraCheeseCost;
