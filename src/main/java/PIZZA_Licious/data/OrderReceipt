@@ -131,3 +131,33 @@ Date: 2025-11-14T03:16:27
 Total: $24.75
 ==============================
 
+===== PIZZA-Licious Receipt =====
+Order ID: 1
+Customer: nam
+Date: 2025-11-14T13:16:06
+
+Large Coke Drink (Light ice) - $3.00
+
+------------------------------
+Total: $3.00
+==============================
+
+===== PIZZA-Licious Receipt =====
+Order ID: 1
+Customer: gg
+Date: 2025-11-14T13:35:03
+
+12” Thick Pizza
+  Meats: []
+  Cheeses: []
+  Toppings: []
+  Sauces: []
+  Sides: []
+  Extra meat: 0
+  Extra cheese: 0
+  Price: $12.00
+
+------------------------------
+Total: $12.00
+==============================
+

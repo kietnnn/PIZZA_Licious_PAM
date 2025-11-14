@@ -16,9 +16,9 @@ public class ReceiptWriter {
         try (FileWriter fileWriter = new FileWriter("src/main/java/PIZZA_Licious/data/OrderReceipt", true)) {
             fileWriter.write(receipt);
             fileWriter.write(System.lineSeparator());
-            System.out.println("🧾 Receipt appended to " + fileName);
+            System.out.println("🧾 Receipt saved ");
         } catch (IOException e) {
-            System.out.println("❌ Error writing receipt: " + e.getMessage());
+            System.out.println("❌ Error receipt: " + e.getMessage());
         }
     }
 }
