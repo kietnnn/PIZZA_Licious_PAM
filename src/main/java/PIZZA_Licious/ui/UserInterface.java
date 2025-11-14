@@ -99,13 +99,7 @@ public class UserInterface {
         String name = scanner.nextLine();
         Order order = new Order(name);
         while (true) {
-            System.out.println("\n \uD83C\uDD95 Order Menu");
-            System.out.println("1) Add Pizza\uD83C\uDF55");
-            System.out.println("2) Add Drink\uD83E\uDD64");
-            System.out.println("3) Add Garlic Knots\uD83E\uDDC4");
-            System.out.println("4) Checkout\uD83D\uDCB0");
-            System.out.println("0) Cancel Order❌");
-            System.out.print("Enter choice: ");
+            orderMenu();
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -123,6 +117,15 @@ public class UserInterface {
                 default -> System.out.println("❌ Invalid input.");
             }
         }
+    }
+    private void orderMenu(){
+        System.out.println("\n \uD83C\uDD95 Order Menu");
+        System.out.println("1) Add Pizza\uD83C\uDF55");
+        System.out.println("2) Add Drink\uD83E\uDD64");
+        System.out.println("3) Add Garlic Knots\uD83E\uDDC4(1.50)");
+        System.out.println("4) Checkout\uD83D\uDCB0");
+        System.out.println("0) Cancel Order❌");
+        System.out.print("Enter choice: ");
     }
 
 
@@ -218,7 +221,7 @@ public class UserInterface {
         String flavor = selectOption("Choose flavor:", new String[]
                 {"Coke", "Pepsi", "Sprite", "Fanta", "Root Beer"});
         String size = selectOption("Choose size:", new String[]
-                {"Small (2.00)","Medium (2.50)","Large (3.00)"});
+                {"Small","Medium","Large"});
         String ice = selectOption("Choose ice level:", new String[]{
                 "No ice","Light ice", "Half ice", "Full ice"});
         Drink drink = new Drink(size, flavor,ice);
@@ -239,32 +242,32 @@ public class UserInterface {
             String choice = scanner.nextLine().trim();
 
             switch (choice) {
-                case "1": // yes
+                case "1":
                     ReceiptWriter writer = new ReceiptWriter("src/main/java/PIZZA_Licious/data/OrderReceipt");
                     writer.writeReceipt(order.getOrder());
                     System.out.println("✅ Order saved. Returning to home screen.");
-                     // exit checkout
-                case "2": // return
+
+                case "2":
                     System.out.println("↩️ Returning to order menu...");
-                    returnToOrderMenu(order); // a method to continue modifying the same order
+                    returnOrderMenu(order);
                     break;
-                case "3": // cancel
+                case "3":
                     System.out.println("❌ Order canceled. Returning to home screen.");
-                    return; // exit checkout, discard order
+                    return;
                 default:
                     System.out.println("❌ Invalid choice. Please enter 1, 2, or 3.");
             }
         }
     }
 
-    private void returnToOrderMenu(Order order) {
+    private void returnOrderMenu(Order order) {
         while (true) {
             System.out.println("\n🧾 Order Menu");
-            System.out.println("1) Add Pizza");
-            System.out.println("2) Add Drink");
-            System.out.println("3) Add Garlic Knots");
-            System.out.println("4) Checkout");
-            System.out.println("0) Cancel Order");
+            System.out.println("1) Add Pizza\uD83C\uDF55");
+            System.out.println("2) Add Drink\uD83E\uDD64");
+            System.out.println("3) Add Garlic Knots\uD83E\uDDC4(1.50)");
+            System.out.println("4) Checkout\uD83D\uDCB0");
+            System.out.println("0) Cancel Order❌");
             System.out.print("Enter choice: ");
 
             String choice = scanner.nextLine().trim();
