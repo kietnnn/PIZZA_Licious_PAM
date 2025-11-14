@@ -14,8 +14,9 @@ public class UserInterface {
 
     public void start() {
 
-        showWelcomeScreen();
+
         while (true) {
+            showWelcomeScreen();
             homeMenu();
             String choice = scanner.nextLine();
 
@@ -108,7 +109,6 @@ public class UserInterface {
                 case "3" -> order.addItem(new GarlicKnot());
                 case "4" -> {
                     checkout(order);
-                    return;
                 }
                 case "0" -> {
                     System.out.println("❌ Order canceled.");
@@ -117,6 +117,7 @@ public class UserInterface {
                 default -> System.out.println("❌ Invalid input.");
             }
         }
+
     }
     private void orderMenu(){
         System.out.println("\n \uD83C\uDD95 Order Menu");
@@ -243,14 +244,19 @@ public class UserInterface {
 
             switch (choice) {
                 case "1":
-                    ReceiptWriter writer = new ReceiptWriter("src/main/java/PIZZA_Licious/data/OrderReceipt");
-                    writer.writeReceipt(order.getOrder());
-                    System.out.println("✅ Order saved. Returning to home screen.");
+                    String timestamp = java.time.LocalDateTime.now()
+                            .format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));
+                    String filePath = "src/main/" + timestamp + ".txt";
 
+                    ReceiptWriter writer = new ReceiptWriter(filePath);
+                    writer.writeReceipt(order.getOrder());
+
+                    System.out.println("✅ Order saved. Returning to home screen.");
+                    return;
                 case "2":
                     System.out.println("↩️ Returning to order menu...");
                     returnOrderMenu(order);
-                    break;
+                    return;
                 case "3":
                     System.out.println("❌ Order canceled. Returning to home screen.");
                     return;

@@ -1,24 +1,32 @@
 package PIZZA_Licious.data;
 
 
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class ReceiptWriter {
 
-    private final String fileName;
+    private String filePath;
 
-    public ReceiptWriter(String fileName) {
-        this.fileName = fileName;
+    public ReceiptWriter(String filePath) {
+        this.filePath = filePath;
+        createFolderIfNotExists(filePath);
     }
 
-    public void writeReceipt(String receipt) {
-        try (FileWriter fileWriter = new FileWriter("src/main/java/PIZZA_Licious/data/OrderReceipt", true)) {
-            fileWriter.write(receipt);
-            fileWriter.write(System.lineSeparator());
-            System.out.println("🧾 Receipt saved ");
+    private void createFolderIfNotExists(String path) {
+        File file = new File(path).getParentFile();
+        if (!file.exists()) {
+            file.mkdir();
+        }
+    }
+
+    public void writeReceipt(String content) {
+        try (BufferedWriter bufferedWriterwriter = new BufferedWriter(new FileWriter(filePath))) {
+            bufferedWriterwriter.write(content);
         } catch (IOException e) {
-            System.out.println("❌ Error receipt: " + e.getMessage());
+            System.err.println("❌ Failed to write receipt: " + e.getMessage());
         }
     }
 }
