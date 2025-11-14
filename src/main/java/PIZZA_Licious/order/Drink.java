@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Drink implements Price {
-    private final String size; // Small, Medium, Large
+    private final String size;
     private final String flavor;
     private final String ice;
 
