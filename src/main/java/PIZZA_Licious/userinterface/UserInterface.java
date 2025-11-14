@@ -62,7 +62,7 @@ public class UserInterface {
         }
     }
 
-    // ---------------- Pizza ----------------
+
     private Pizza addPizza() {
         System.out.println("\n=== Build Your Pizza ===");
         String crust = selectOption("Choose crust type:",
@@ -113,7 +113,7 @@ public class UserInterface {
 
 
 
-    // ---------------- Drink ----------------
+
     private Drink addDrink() {
         System.out.println("\n=== Select a Drink ===");
         String flavor = selectOption("Choose flavor:", new String[]
@@ -194,7 +194,7 @@ public class UserInterface {
 
 
 
-    // ---------------- Helpers ----------------
+
     private String selectOption(String prompt, String[] options) {
         while (true) {
             System.out.println("\n" + prompt);
