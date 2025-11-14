@@ -1,44 +1,4 @@
 
-===== PIZZA-Licious Receipt =====
-Order ID: 1
-Customer: gg
-Date: 2025-11-14T13:35:03
-
-12” Thick Pizza
-  Meats: []
-  Cheeses: []
-  Toppings: []
-  Sauces: []
-  Sides: []
-  Extra meat: 0
-  Extra cheese: 0
-  Price: $12.00
-
-------------------------------
-Total: $12.00
-==============================
-
-===== PIZZA-Licious Receipt =====
-Order ID: 1
-Customer: Hanibal 
-Date: 2025-11-14T14:16:47
-
-16” Thin Pizza
-  Meats: [Pepperoni, Ham, Extra Meat, Extra Meat]
-  Cheeses: [Parmesan, Ricotta]
-  Toppings: [Onions, Mushrooms, Tomatoes, Pineapple]
-  Sauces: [BBQ, Buffalo]
-  Sides: [red pepper]
-  Extra meat: 2
-  Extra cheese: 0
-  Price: $36.00
-Medium Coke Drink (No ice) - $2.50
-Garlic Knots - $1.50
-
-Garlic Knots - $1.50
 
 
-------------------------------
-Total: $41.50
-=======================================
 
