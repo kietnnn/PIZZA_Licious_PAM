@@ -175,7 +175,42 @@ public class UserInterface {
         return pizza;
     }
 
+    private String selectOption(String prompt, String[] options) {
+        while (true) {
+            System.out.println("\n" + prompt);
+            for (int i = 0; i < options.length; i++) {
+                System.out.println((i + 1) + ") " + options[i]);
+            }
+            System.out.print("Enter choice: ");
+            int choice = readInt();
+            if (choice >= 1 && choice <= options.length) return options[choice - 1];
+            System.out.println("❌ Invalid selection. Try again.");
+        }
+    }
 
+    private void addMultipleChoices(String prompt, String[] options, java.util.function.Consumer<String> consumer) {
+        System.out.println("\n" + prompt);
+        for (int i = 0; i < options.length; i++) System.out.println((i + 1) + ") " + options[i]);
+        System.out.println("Enter numbers separated by commas/ press ENTER to skip ");
+        String input = scanner.nextLine();
+        if (input.isBlank()) return;
+        for (String num : input.split(",")) {
+            try {
+                int index = Integer.parseInt(num.trim()) - 1;
+                if (index >= 0 && index < options.length) consumer.accept(options[index]);
+            } catch (NumberFormatException ignored) {}
+        }
+    }
+
+    private int readInt() {
+        while (true) {
+            try {
+                return Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.print("Enter a valid number: ");
+            }
+        }
+    }
 
 
     private Drink addDrink() {
@@ -183,7 +218,7 @@ public class UserInterface {
         String flavor = selectOption("Choose flavor:", new String[]
                 {"Coke", "Pepsi", "Sprite", "Fanta", "Root Beer"});
         String size = selectOption("Choose size:", new String[]
-                {"Small", "Medium", "Large"});
+                {"Small (2.00)","Medium (2.50)","Large (3.00)"});
         String ice = selectOption("Choose ice level:", new String[]{
                 "No ice","Light ice", "Half ice", "Full ice"});
         Drink drink = new Drink(size, flavor,ice);
@@ -252,46 +287,6 @@ public class UserInterface {
                     return;
                 default:
                     System.out.println("❌ Invalid input. Try again.");
-            }
-        }
-    }
-
-
-
-
-    private String selectOption(String prompt, String[] options) {
-        while (true) {
-            System.out.println("\n" + prompt);
-            for (int i = 0; i < options.length; i++) {
-                System.out.println((i + 1) + ") " + options[i]);
-            }
-            System.out.print("Enter choice: ");
-            int choice = readInt();
-            if (choice >= 1 && choice <= options.length) return options[choice - 1];
-            System.out.println("❌ Invalid selection. Try again.");
-        }
-    }
-
-    private void addMultipleChoices(String prompt, String[] options, java.util.function.Consumer<String> consumer) {
-        System.out.println("\n" + prompt);
-        for (int i = 0; i < options.length; i++) System.out.println((i + 1) + ") " + options[i]);
-        System.out.println("Enter numbers separated by commas/ press ENTER to skip ");
-        String input = scanner.nextLine();
-        if (input.isBlank()) return;
-        for (String num : input.split(",")) {
-            try {
-                int index = Integer.parseInt(num.trim()) - 1;
-                if (index >= 0 && index < options.length) consumer.accept(options[index]);
-            } catch (NumberFormatException ignored) {}
-        }
-    }
-
-    private int readInt() {
-        while (true) {
-            try {
-                return Integer.parseInt(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.print("Enter a valid number: ");
             }
         }
     }

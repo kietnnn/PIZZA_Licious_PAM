@@ -38,7 +38,7 @@ public class Order {
 
         stringBuilder.append("\n------------------------------\n");
         stringBuilder.append("Total: $").append(String.format("%.2f", getTotal())).append("\n");
-        stringBuilder.append("==============================\n");
+        stringBuilder.append("=================================\n");
         return stringBuilder.toString();
     }
 
