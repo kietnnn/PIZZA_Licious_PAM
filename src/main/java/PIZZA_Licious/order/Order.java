@@ -26,7 +26,7 @@ public class Order {
         return items.stream().mapToDouble(Price::getPrice).sum();
     }
 
-    public String getReceipt() {
+    public String getOrder() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("===== PIZZA-Licious Receipt =====\n");
         stringBuilder.append("Order ID: ").append(orderId).append("\n");

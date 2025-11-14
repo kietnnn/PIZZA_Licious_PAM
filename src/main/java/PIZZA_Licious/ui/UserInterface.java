@@ -230,7 +230,7 @@ public class UserInterface {
     private void checkout(Order order) {
         while (true) {
             System.out.println("\n===== Checkout =====");
-            System.out.println(order.getReceipt());
+            System.out.println(order.getOrder());
             System.out.println("1) Confirm Order");
             System.out.println("2) Return to Order Menu");
             System.out.println("3) Cancel Order");
@@ -241,7 +241,7 @@ public class UserInterface {
             switch (choice) {
                 case "1": // yes
                     ReceiptWriter writer = new ReceiptWriter("src/main/java/PIZZA_Licious/data/OrderReceipt");
-                    writer.writeReceipt(order.getReceipt());
+                    writer.writeReceipt(order.getOrder());
                     System.out.println("✅ Order saved. Returning to home screen.");
                      // exit checkout
                 case "2": // return
