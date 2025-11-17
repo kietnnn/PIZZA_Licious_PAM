@@ -7,14 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private final int orderId;
     private final String customer;
     private final List<Price> items = new ArrayList<>();
 
-    private static int nextId = 1;
-
     public Order(String customer) {
-        this.orderId = nextId++;
         this.customer = customer;
     }
 
