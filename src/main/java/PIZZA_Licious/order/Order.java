@@ -29,7 +29,6 @@ public class Order {
     public String getOrder() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("===== PIZZA-Licious Receipt =====\n");
-        stringBuilder.append("Order ID: ").append(orderId).append("\n");
         stringBuilder.append("Customer: ").append(customer).append("\n");
         stringBuilder.append("Date: ").append(LocalDateTime.now().withNano(0)).append("\n\n");
 

@@ -12,10 +12,10 @@ public class ReceiptWriter {
 
     public ReceiptWriter(String filePath) {
         this.filePath = filePath;
-        createFolderIfNotExists(filePath);
+        createFolder(filePath);
     }
 
-    private void createFolderIfNotExists(String path) {
+    private void createFolder(String path) {
         File file = new File(path).getParentFile();
         if (!file.exists()) {
             file.mkdir();

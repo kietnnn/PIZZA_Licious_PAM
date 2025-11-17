@@ -252,7 +252,8 @@ public class UserInterface {
                     writer.writeReceipt(order.getOrder());
 
                     System.out.println("✅ Order saved. Returning to home screen.");
-                    return;
+                    System.exit(0);
+                    break;
                 case "2":
                     System.out.println("↩️ Returning to order menu...");
                     returnOrderMenu(order);
