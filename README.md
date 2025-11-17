@@ -22,7 +22,7 @@
 ========================================================================
 
 
-================================ THE DIAGRAM ==========================
+================================ THE DIAGRAM (GENERAL) ==========================
 
   -this is diagram sample for my project ( It can be wrong )
 -    <img width="801" height="712" alt="PAM drawio" src="https://github.com/user-attachments/assets/ee136df0-ada7-45d9-a9f5-fa215ad459cc" />
@@ -30,6 +30,9 @@
 - This diagram will be presented as a recap of what happens in my program.
 
   ========================================================================
+
+  ================================ THE CODING ==========================
+to be continue...
 
  
 
