@@ -1,13 +1,12 @@
- ================================ INTRODUCTION ==========================
+##   INTRODUCTION 
    
 - Welcome to the project "PizzaLicious.PAM,". 
 - The PAM or "Pizza Automatic Machine" is a technology system that allows customers to create and customize their own pizza. 
 - Everyone is welcome to view and use the project, and feel free to give some feedback if you aren't satisfied.
 - I am open to receiving any positive feedback that helps me improve my invention.
-========================================================================
 
 
-================================ DEVELOPMENT ==========================
+##  DEVELOPMENT 
    
   
 - The Dell laptop and some research tools are my assistance to help me finish my project in a week.
@@ -19,28 +18,28 @@
 -      https://github.com/craigmckeachie/Week6-Fall2025/blob/main/notes/inheritance-abstract-interfaces.md#-summary-table
 -      https://github.com/craigmckeachie/Streams/blob/main/notes/packages-exercise.md
 
-========================================================================
 
 
-================================ THE DIAGRAM  ==========================
+
+## THE DIAGRAM 
 
   -this is diagram sample for my project ( It can be wrong )
 -    <img width="801" height="712" alt="PAM drawio" src="https://github.com/user-attachments/assets/ee136df0-ada7-45d9-a9f5-fa215ad459cc" />
 
 - This diagram will be presented as a recap of what happens in my program.
 
-  ========================================================================
 
-  ================================ THE CODING (GENERAL)  ==========================
+
+## THE CODING (GENERAL) 
 
 - I use price() at a InterFace that contain getPrice(), and getReceipt().
 - class Pizza(), GarnicKnot(), Drinks() inplements class Price()
 - Using UserInterface() is the most important factor when it contains all of the elements and makes it work follow a system.
 - UserInterface() is created based on the menu format.
 - ReceiptWriter() has a role to create an independent file, receive data from checkout orders, and save that data to the file.
- ========================================================================
 
-================================ THE CODING (IN DETAIL)  ==========================
+
+## THE CODING (IN DETAIL)  
 
 +For class pizza(), I used a HashMap to store the various prices for size, meat, cheese, and extra stuff. (The same with Drink() class).
  
